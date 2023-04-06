@@ -1,0 +1,23 @@
+
+<app-header></app-header>
+<div class="matcard">
+<mat-card>
+  <h3 class="mt-2">Student login</h3>
+  <form [formGroup]="LoginForm" (ngSubmit)="studentLogin()" class="example-form">
+    <div>
+      <mat-form-field class="field mt-4" appearance="outline">
+        <mat-label>Enter Student id</mat-label>
+        <input matInput formControlName="studentid" placeholder="enter student id">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="field" appearance="outline">
+        <mat-label>Enter Student Mobileno</mat-label>
+        <input matInput formControlName="mobileno" placeholder="enter Student mobilebno">
+      </mat-form-field>
+    </div><div>
+      <button type="submit"  class="btn btn-primary mb-2 login">Login</button>
+    </div>
+  </form>
+</mat-card>
+</div>

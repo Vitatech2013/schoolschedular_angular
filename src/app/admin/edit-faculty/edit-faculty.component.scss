@@ -1,0 +1,22 @@
+mat-card{
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    background-color: rgb(234, 234, 243);
+    border-radius: 10px;
+
+  
+}
+.field{
+    width: 100%;
+}
+
+  .matcard{
+    margin: 100px 0px 100px 0px;
+  }
+  .login{
+    margin: auto;
+  }
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }

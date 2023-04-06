@@ -1,0 +1,74 @@
+<div class="container">
+    <form [formGroup]="TTsearchform" (ngSubmit)="search()">
+    <div class="row ms-2">
+        <div class="col-sm-3">
+            <mat-form-field class="fields mt-4" appearance="outline">
+                <mat-label>Class</mat-label>
+                <mat-select formControlName="classs">
+                    <mat-option *ngFor="let s of  class" value="{{s}}">
+                        {{s}}
+                    </mat-option>
+                </mat-select> </mat-form-field>
+        </div>
+        <div class="col-sm-3">
+            <mat-form-field class="fields mt-4" appearance="outline">
+                <mat-label>Section</mat-label>
+                <mat-select formControlName="section">
+                    <mat-option *ngFor="let s of  section" value="{{s}}">
+                        {{s}}
+                    </mat-option>
+                </mat-select> </mat-form-field>
+        </div>
+        <div class="col-sm-3 mt-4">
+            <button type="submit" class="btn btn-primary">view Timetable</button>
+        </div>
+    </div>
+</form>
+    </div>
+
+<div class="container-fluid tables">
+    <div class="row table-responsive">
+        <div class="headers ">
+            <h3 class="table-title">Timetable </h3>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr >
+                    <th scope="col">Day</th>
+                    <th scope="col">09:30-10:30</th>
+                    <th scope="col">Faculty</th>
+                    <th scope="col">10:30-11:30</th>
+                    <th scope="col">Facultyid</th>
+                    <th scope="col">11:30-12:30</th>
+                    <th scope="col">Faculty</th>
+                    <th scope="col">Break</th>
+                    <th scope="col">1:30-2:30</th>
+                    <th scope="col">Faculty</th>
+                    <th scope="col">2:30-3:30</th>
+                    <th scope="col">Faculty</th>
+                    <th scope="col">3:30-4:30</th>
+                    <th scope="col">Faculty</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr *ngFor="let t of timetable">
+                    <td>{{t.day}}</td>
+                    <td>{{t.subject1}}</td>
+                    <td>{{t.faculty1}} </td>
+                    <td>{{t.subject2}}</td>
+                    <td>{{t.faculty2}}</td>
+                    <td>{{t.subject3}}</td>
+                    <td>{{t.faculty3}}</td>
+                    <td>Break</td>
+                    <td>{{t.subject4}}</td>
+                    <td>{{t.faculty4}}</td>
+                    <td>{{t.subject5}}</td>
+                    <td>{{t.faculty5}}</td>
+                    <td>{{t.subject6}}</td>
+                    <td>{{t.faculty6}}</td>
+            
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>

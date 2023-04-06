@@ -1,0 +1,64 @@
+<div class="matcard">
+    <h1 class="text-center">Add Marks</h1>
+<mat-card>
+  
+   <form [formGroup]="AddmarksForm" (ngSubmit)="Addmarks()">
+   <div class="row ms-2 ">
+        <div class="col-sm-4 fr ">
+            <mat-form-field class="fields mt-4" appearance="outline">
+                <mat-label>student roll.no</mat-label>
+                <input matInput formControlName="studentid" placeholder="Enter roll.no" (input)="isStudent($event)">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="col-sm-4">
+        <mat-form-field class="fields mt-4" appearance="outline">
+            <mat-label>student name</mat-label>
+            <input matInput formControlName="name" readonly >
+        </mat-form-field></div>
+        <div class="col-sm-4">
+            <mat-form-field class="fields mt-4" appearance="outline">
+                <mat-label>Class</mat-label>
+                <input matInput formControlName="classs" readonly >
+
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+            <mat-form-field class="fields mt-4" appearance="outline">
+                <mat-label>Section</mat-label>
+                <input matInput formControlName="section" readonly >
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row ms-2 ">
+        <div class="col-sm-4">
+        <mat-form-field class="fields mt-4" appearance="outline">
+            <mat-label>Exam type</mat-label>
+            <mat-select formControlName="type">
+                <mat-option *ngFor="let e of  exams" value="{{e}}">
+                    {{e}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field></div>
+        <div class="col-sm-4">
+        <mat-form-field class="fields mt-4" appearance="outline">
+            <mat-label>Subject</mat-label>
+            <mat-select formControlName="subject">
+                <mat-option *ngFor="let s of subject" value="{{s}}">
+                    {{s}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+         </div>
+         <div class="col-sm-4">
+        <mat-form-field class="fields mt-4" appearance="outline">
+            <mat-label>Marks</mat-label>
+            <input matInput formControlName="marks" placeholder="Enter marks">
+        </mat-form-field></div>
+    </div>
+    <div class="col-sm-3 mt-4 fr">
+        <button type="submit" class="btn btn-primary mb-4">Add Marks</button>
+    </div>
+</form>
+</mat-card>

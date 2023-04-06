@@ -1,0 +1,95 @@
+<div class="matcard">
+<mat-card>
+  <h3 class="mt-2">Faculty Registration</h3>
+  <form [formGroup]="RegistrationForm" (ngSubmit)="Addfaculty()" class="example-form">
+    <div class="row">
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Faculty id</mat-label>
+          <input formControlName="facultyid" matInput placeholder="Enter Faculty id">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Faculty name</mat-label>
+          <input formControlName="name" matInput placeholder="Enter Faculty name">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Father name</mat-label>
+          <input  formControlName="fathername" matInput placeholder="Enter Fathername">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <label   class="field"><strong>Gender:</strong></label>
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+          </mat-radio-group>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Mobile.no</mat-label>
+          <input  formControlName="mobileno" matInput placeholder="Enter Mobile.no">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Emailid</mat-label>
+          <input  formControlName="emailid" matInput placeholder="Enter Emailid">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Date of birth</mat-label>
+          <input  formControlName="dob" matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Date of join</mat-label>
+          <input  formControlName="doj" matInput [matDatepicker]="picker2">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Experiance</mat-label>
+          <input  formControlName="experiance" matInput placeholder="Enter Experiance">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Subject</mat-label>
+          <mat-select formControlName="subject">
+            <mat-option *ngFor="let s of subject" value="{{s}}">
+              {{s}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field class="field mt-4" appearance="outline">
+          <mat-label>Address</mat-label>
+          <input  formControlName="address" matInput placeholder="Enter Address">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <button type="submit" class="btn btn-success mt-4 login">Register</button>
+      </div>
+    </div>
+  </form>
+</mat-card>
+</div>

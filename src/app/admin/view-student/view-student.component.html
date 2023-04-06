@@ -1,0 +1,85 @@
+
+
+    <ng-container  *ngIf="students.length !=0">
+
+        <div class="container-fluid tables">
+            <div class="row table-responsive">
+                <div class="headers ">
+                    <h3 class="table-title">Student details </h3>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">S.no</th>
+                            <th scope="col">Student id</th>
+                            <th scope="col">Student name</th>
+                            <th scope="col">Father name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Mobile no</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Section</th>
+                            <th scope="col">Academic Year</th>
+                            <th scope="col">DOJ</th>
+                            <th scope="col">Adress</th>
+                            <th scope="col">action</th>
+        
+        
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let s of students index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{s.studentid}}</td>
+                            <td>{{s.name}} </td>
+                            <td>{{s.fathername}}</td>
+                            <td>{{s.gender}}</td>
+                            <td>{{s.mobileno}}</td>
+                            <td>{{s.dob | date}}</td>
+                            <td>{{s.classs}}</td>
+                            <td>{{s.section}}</td>
+                            <td>{{s.academicyear}}</td>
+                            <td>{{s.doj | date}}</td>
+                            <td>{{s.address}}</td>
+                            <td><button class="btn" (click)="Editstudent(s)"><mat-icon>edit</mat-icon></button>
+                                <button class="btn " (click)="deletestudent(s._id)" style="margin-left: 5px;"><mat-icon>delete</mat-icon></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+    </ng-container>
+
+    <ng-container *ngIf="students.length ==0">
+        
+<div class="container-fluid tables">
+    <div class="row table-responsive">
+        <div class="headers ">
+            <h3 class="table-title">Student details </h3>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">S.no</th>
+                    <th scope="col">Student id</th>
+                    <th scope="col">Student name</th>
+                    <th scope="col">Father name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Mobile no</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Section</th>
+                    <th scope="col">Academic Year</th>
+                    <th scope="col">DOJ</th>
+                    <th scope="col">Adress</th>
+                    <th scope="col">action</th>
+                </tr>
+            </thead>
+        </table>
+        <div class="text-danger text-center fw-bold">
+            No-Data-Found
+        </div>
+ </div>
+</div>
+    </ng-container>

@@ -1,0 +1,74 @@
+<ng-container *ngIf="facultyList.length !==0">
+    <div class="container-fluid tables">
+        <div class="row table-responsive">
+            <div class="headers ">
+                <h3 class="table-title">Faculty details </h3>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">S.no</th>
+                        <th scope="col">Faculty name</th>
+                        <th scope="col">Father name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Email id</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Experiance</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">DOJ</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let faculty of facultyList index as i">
+                        
+                        <td>{{i+1}}</td>
+                        <td>{{faculty.name}}</td>
+                        <td> {{faculty.fathername}} </td>
+                        <td>{{faculty.gender}}</td>
+                        <td>{{faculty.emailid}}</td>
+                        <td>{{faculty.dob | date}}</td>
+                        <td>{{faculty.experiance}}</td>
+                        <td>{{faculty.subject}}</td>
+                        <td>{{faculty.doj | date}}</td>
+                        <td>{{faculty.address}}</td>
+                        <td><button class="btn " (click)="editfaculty(faculty)" ><mat-icon>edit</mat-icon></button>
+                            <button class="btn " (click)="deletefaculty(faculty._id)"
+                                style="margin-left: 5px;"><mat-icon>delete</mat-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+</ng-container>
+
+<ng-container *ngIf="facultyList.length ==0">
+    <div class="container-fluid tables">
+        <div class="row table-responsive">
+            <div class="headers ">
+                <h3 class="table-title">Faculty details </h3>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">S.no</th>
+                        <th scope="col">Faculty name</th>
+                        <th scope="col">Father name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Email id</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Experiance</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">DOJ</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">action</th>
+                    </tr>
+                </thead>
+                
+            </table></div></div>
+            <div class="text-danger text-center fw-bold">
+                No-Data-Found
+            </div>
+</ng-container>

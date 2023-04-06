@@ -1,0 +1,109 @@
+<div class="matcard">
+  <mat-card>
+    <h3 class="mt-2">Student Registration</h3>
+    <form [formGroup]="RegistrationForm" (ngSubmit)="Addstudent()" class="example-form">
+      
+      <div class="row">
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Student id</mat-label>
+            <input formControlName="studentid" matInput placeholder="Enter Student id">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Student Name</mat-label>
+            <input formControlName="name" matInput placeholder="Enter Student name">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Father name</mat-label>
+            <input  formControlName="fathername" matInput placeholder="Enter Fathername">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <label   class="field"><strong>Gender:</strong></label>
+          <mat-radio-group aria-label="Select an option" formControlName="gender">
+              <mat-radio-button value="male">Male</mat-radio-button>
+              <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Mobile.no</mat-label>
+            <input  formControlName="mobileno" matInput placeholder=" Enter Mobile.no">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Date of birth</mat-label>
+            <input  formControlName="dob" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Class</mat-label>
+            <mat-select formControlName="classs">
+              <mat-option *ngFor="let c of class" value="{{c}}">
+                {{c}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Section</mat-label>
+            <mat-select formControlName="section">
+              <mat-option *ngFor="let s of section" value="{{s}}">
+                {{s}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Academicyear</mat-label>
+            <mat-select formControlName="academicyear">
+              <mat-option *ngFor="let s of year" value="{{s}}">
+                {{s}}
+              </mat-option>
+            </mat-select>     
+             </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+ 
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Date of join</mat-label>
+            <input  formControlName="doj" matInput [matDatepicker]="picker2">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="field mt-4" appearance="outline">
+            <mat-label>Address</mat-label>
+            <input  formControlName="address" matInput placeholder=" Enter Address">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4  mt-4">
+          <button type="submit" class="btn btn-success login">Register</button>
+        </div>
+      </div>
+
+
+
+
+
+
+

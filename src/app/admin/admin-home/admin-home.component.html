@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><img src="assets\R.png" alt=""></mat-toolbar>
+    
+    <mat-nav-list color="primary">
+      <a mat-list-item routerLink="faculty-registration">Faculty Registration</a>
+      <a mat-list-item routerLink="view-faculty">View Faculty</a>
+      <a mat-list-item routerLink="student-registration">Student Registration</a>
+      <a mat-list-item routerLink="view-student">View Student</a>
+      <a mat-list-item routerLink="add-timetable">Add Time-Table</a>
+      <a mat-list-item routerLink="view-timetable">View Time-Table</a>
+      <a mat-list-item routerLink="admin-view-marks">View Marks</a>
+      <a mat-list-item (click)="logout()" >Logout</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="height: 80px;" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">Menu</mat-icon>
+      </button>
+      <span>School Management System</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

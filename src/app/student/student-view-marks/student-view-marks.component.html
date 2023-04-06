@@ -1,0 +1,51 @@
+<form [formGroup]="MarksForm" (ngSubmit)="search()">
+
+        <div class="row justify-content-center">
+            <div class="col-sm-3">
+                <mat-form-field class="fields mt-4" appearance="outline">
+                    <mat-label>Exam type</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let t of  type" value="{{t}}">
+                            {{t}}
+                        </mat-option>
+                    </mat-select> 
+                </mat-form-field>
+            </div>
+            <div class="col-sm-3 mt-4">
+                <button type="submit" class="btn btn-primary">view Marks</button>
+            </div>
+        </div>
+
+    </form>
+    
+        
+    <div class="container-fluid">
+        <div class="row table-responsive">
+            <div class="headers ">
+                <h3 class="table-title">Student Marks </h3>
+            </div>
+            <table class="table table-bordered m-auto "  >
+                <thead>
+                    <tr>
+                        <th scope="col">S no</th>
+                        <th scope="col">Student id</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Total Marks</th>
+                        <th scope="col">Marks scored</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let t of exam index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{t.studentid}}</td>
+                        <td>{{t.subject}} </td>
+                        <td>{{t.totalmarks}}</td>
+                        <td>{{t.marks}}</td>
+                        <td>{{t.result}}</td>
+                    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>

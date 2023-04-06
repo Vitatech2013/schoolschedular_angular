@@ -1,0 +1,203 @@
+<div class="matcard">
+    <mat-card>
+        <h3 class="mt-2">Assign Timetable</h3>
+        <form [formGroup]="TTRegistrationForm" class="example-form">
+            <div class="row">
+                <div class="col-sm-4">
+                    <mat-form-field class="fields mt-4" appearance="outline">
+                        <mat-label>Day</mat-label>
+                        <mat-select formControlName="day">
+                            <mat-option *ngFor="let d of  day" value="{{d}}">
+                                {{d}}
+                            </mat-option>
+                        </mat-select>         
+                               </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="fields mt-4" appearance="outline">
+                        <mat-label>Class</mat-label>
+                        <mat-select formControlName="classs">
+                            <mat-option *ngFor="let c of  class" value="{{c}}">
+                                {{c}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-4">
+                    <mat-form-field class="fields mt-4" appearance="outline">
+                        <mat-label>Section</mat-label>
+                        <mat-select formControlName="section">
+                            <mat-option *ngFor="let s of  section" value="{{s}}">
+                                {{s}}
+                            </mat-option>
+                        </mat-select> </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Hour 1</mat-label>
+                        <input formControlName="hour1" readonly matInput >
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label >Subject</mat-label>
+                        <mat-select formControlName="subject1">
+                            <mat-option *ngFor="let s of subject" value="{{s}}">
+                                {{s}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Faculty</mat-label>
+                        <mat-select formControlName="faculty1">
+                            <mat-option *ngFor="let f of  fdata" value="{{f.name}}">
+                                {{f.name}}
+                            </mat-option>
+                        </mat-select>
+                     </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Hour 2</mat-label>
+                        <input formControlName="hour2" readonly matInput >
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Subject</mat-label>
+                        <mat-select formControlName="subject2">
+                            <mat-option *ngFor="let s of subject" value="{{s}}">
+                                {{s}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Faculty</mat-label>
+                        <mat-select formControlName="faculty2">
+                            <mat-option *ngFor="let f of  fdata" value="{{f.name}}">
+                                {{f.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Hour 3</mat-label>
+                        <input formControlName="hour3" readonly matInput >
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Subject</mat-label>
+                        <mat-select formControlName="subject3">
+                            <mat-option *ngFor="let s of subject" value="{{s}}">
+                                {{s}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Faculty</mat-label>
+                        <mat-select formControlName="faculty3" >
+                            <mat-option *ngFor="let f of  fdata" value="{{f.name}}">
+                                {{f.name}}
+                            </mat-option>
+                        </mat-select> </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Hour 4</mat-label>
+                        <input formControlName="hour4" readonly matInput >
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Subject</mat-label>
+                        <mat-select formControlName="subject4">
+                            <mat-option *ngFor="let s of subject" value="{{s}}">
+                                {{s}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Faculty</mat-label>
+                        <mat-select formControlName="faculty4">
+                            <mat-option *ngFor="let f of  fdata" value="{{f.name}}">
+                                {{f.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Hour 5</mat-label>
+                        <input formControlName="hour5" readonly matInput >
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Subject</mat-label>
+                        <mat-select formControlName="subject5">
+                            <mat-option *ngFor="let s of subject" value="{{s}}">
+                                {{s}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Faculty</mat-label>
+                        <mat-select formControlName="faculty5">
+                            <mat-option *ngFor="let f of  fdata" value="{{f.name}}">
+                                {{f.name}}
+                            </mat-option>
+                        </mat-select>
+                     </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Hour 6</mat-label>
+                        <input formControlName="hour6" readonly matInput >
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                        
+                <mat-form-field class="field mt-4" appearance="outline">
+                    <mat-label>Subject</mat-label>
+                    <mat-select formControlName="subject6">
+                        <mat-option *ngFor="let s of subject" value="{{s}}">
+                            {{s}}
+                        </mat-option>
+                    </mat-select >
+                </mat-form-field>
+                </div>
+                <div class="col-sm-2">
+                    <mat-form-field class="field mt-4" appearance="outline">
+                        <mat-label>Faculty</mat-label>
+                        <mat-select formControlName="faculty6">
+                            <mat-option *ngFor="let f of  fdata" value="{{f.name}}">
+                                {{f.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+          
+                <div class="bas">
+                    <button type="submit" (click)="EditTT()" class="btn btn-primary">Update</button>
+                </div>
+        </form>
+    </mat-card>
